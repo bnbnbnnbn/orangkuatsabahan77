@@ -1,0 +1,145 @@
+﻿<html>
+	<head>
+
+<audio src="thai.mp3" autoplay controls></audio>
+		<script src="stuff/bUtils.js"></script>
+		<script src="stuff/canvas.js"></script>
+		<link rel="stylesheet" type="text/css" href="stuff/btStyle.css">
+		<script>
+			var ctx
+			var gallImgs = [
+				"1.png",
+				"2.png",
+				"3.png",
+				"4.jpg",
+				"5.png",
+				"6.png",
+				"7.png",
+				"8.png",
+				"9.bmp",
+				"10.png",
+				"11.jpg"
+			]
+			
+			var gallID = 0
+			function setup() {
+				B.sinc(E.note)
+				E.jsW.hidden = true;
+				setInterval(()=>{
+					var time = new Date()
+					E.time.innerText = time.getFullYear() + " " + (time.getMonth() + 1) + "." + (time.getDate()) + ". " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + ":" +  time.getMilliseconds()
+				},17)
+				ctx = new CanvasUtil(B.canvas)
+				setInterval(()=>{
+					if (B.get.lowB) {return}
+					gallID++
+					if (gallID > gallImgs.length - 1) {
+						gallID = 0;
+					}
+					var img = new Image()
+					img.onload = ()=>{
+						var wid = (img.width / img.height) * 500
+						ctx.setSize([wid,500])
+						ctx.load("gallery/" + gallImgs[gallID],[0,0],[wid,500])
+					}
+					img.src = "gallery/" + gallImgs[gallID]
+					
+				},5000)
+				if (!B.lowB) {ctx.load("gallery/" + gallImgs[0],[0,0],[500,500])}
+				
+			}
+		</script>
+		<style>
+			a {
+				color:yellow;text-decoration:none
+			}
+		</style>
+	</head>
+	<body style="background-color:black">
+		<script>
+			if (B.get.redirect != undefined) {
+				location.replace(decodeURIComponent(B.get.redirect))
+			}
+		</script>
+		<img src="stuff/colors.png" style="height:375px;position:absolute;top:0px;left:0px" class="fillW" hidden />
+		<img src="stuff/logo.png" style="position:absolute;height:200px;width:200px;top:100px;left:275px" />
+		<h1 style="position:absolute;color:white;top:220px;left:485px" id="time">
+			<span id="jsW" style="color:red">ERROR ERROR ERROR</span>
+		</h1>
+		<h1 style="color:black;position:absolute;top:75px;left:485px;font-size:100px;color:yellow" >
+		Vps Project
+		</h1>
+		<section id="text" style="color:white;position:relative;top:375">
+		    <a href="https://www.facebook.com/eko_purnomo97"><img alt="Facebook" border="0" src="http://1.bp.blogspot.com/-Fpo8Edcz9r8/Uvbt82X_xTI/AAAAAAAAAPs/ulsuFKNvuUI/s20/facebook.png" title="Find me on Facebook" /></a>&nbsp;
+
+<a href="https://twitter.com/eko_purnomo97"><img alt="Twitter" border="0" src="http://1.bp.blogspot.com/-Chro7q6uj2E/Uvbt-ZIuvuI/AAAAAAAAAQQ/lKgie6d-MNo/s20/twitter.png" title="Follow my Twitter" /></a>&nbsp;
+
+<a href="https://plus.google.com/107139718002661368287"><img alt="Google+" border="0" src="http://2.bp.blogspot.com/-RlLTbIC_AtM/Uvbt80L9J5I/AAAAAAAAAPw/aQ2WngzkP6o/s20/google_plus.png" title="Add me on Google+" /></a>
+
+<a href="https://instagram.com/eko_purnomo97"><img alt="Instagram" border="0" src="http://2.bp.blogspot.com/-sGItvKHpEBI/Uvbt9uc-twI/AAAAAAAAAP8/mSrkggy9aY8/s20/instagram.png" title="Find me on Instagram" /></a>
+
+<a href="https://linkedin.com"><img alt="Linkedin" border="0" src="http://1.bp.blogspot.com/-g4kCUG-XenU/Uvbt95QYaxI/AAAAAAAAAQY/KJk7t5pCRYs/s20/linkedin.png" title="Find me on Linkedin" /></a>
+
+<a href="https://Path.com"><img alt="Path" border="0" src="http://2.bp.blogspot.com/-VnZEtVjKWmY/Uvbt92tTvVI/AAAAAAAAAQM/PV7WdbtJ5WY/s20/path.png" title="Find me on Path" /></a>
+
+<a href="mailto:eko_purnomo97@yahoo.com"><img alt="Yahoo" border="0" src="http://2.bp.blogspot.com/-z83sbVxyM8c/Uvbt_CLk6pI/AAAAAAAAAQk/IL6ynoNf6vg/s20/yahoo.png" title="Kirim Yahoo Mail" /></a>
+
+<a href='https://www.youtube.com/channel/UCQ_coRdwuLS6F2Fvfy25ODg' class='tooltip' title='youtube'><img src="http://3.bp.blogspot.com/-SiOe2eSiKL8/Uvbt_VECibI/AAAAAAAAAQo/OifeH3RcxoY/s20/youtube.png"/></a>
+			<h1>Borneo Brad / Shop</h1>
+			<h3>
+				<a href="https://www.youtube.com/channel/UC6L4aSMM7i36iaLEsK3NThQ" style="color:yellow;text-decoration:none">Youtube</a><br />
+				<a href="https://github.com/apache07" style="color:yellow;text-decoration:none">My Github Profile</a><br />
+				<a href="index.html" style="color:yellow;text-decoration:none">Main Page / Online</a><br />
+				<a href="zbierka.html" style="color:yellow;text-decoration:none">Best Item</a><br />
+			</h3>
+			<h1>Hosting / Domain</h1>
+			<h3>
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Virtual Private Server</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Reseller Hosting (WHM)</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Web Hosting</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Domain</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Autoscript VPS</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:yellow;text-decoration:none">Cpanel/WHM</a><br />
+				<a href="https://www.wasap.my/+60138733203">WHM Access 100GB</a><br />
+				<a href="https://www.wasap.my/+60138733203">WHM Access 200GB</a><br />
+				<a href="https://www.wasap.my/+60138733203">Auto Visitor Web</a><br />
+				<a href="https://www.wasap.my/+60138733203">Account Unlimited Google Drive (LIFE TIME)</a><br />
+			</h3>
+			<h1>CONTACT ME</h1>
+			<h3>
+				<a href="Samrey Steven?raw=true" style="color:red;text-decoration:none">
+				Samrey Steven</a><br />
+				<a href="https://web.facebook.com/Mr.Shendarez" style="color:red;text-decoration:none">
+				Facebook</a><br />
+				<a href="https://www.wasap.my/+60138733203" style="color:red;text-decoration:none">
+				WhatsApp</a><br />
+				<a href="http://t.me/orangkuatsabahanterkini"
+				style="color:red;text-decoration:none">Telegram</a><br />
+				<a href="https://www.wasap.my/+60138733203" 
+				style="color:yellow;text-decoration:none">HP +60109475453</a><br />
+				<a href="https://www.facebook.com/eko_purnomo97"><img alt="Facebook" border="0" src="http://1.bp.blogspot.com/-Fpo8Edcz9r8/Uvbt82X_xTI/AAAAAAAAAPs/ulsuFKNvuUI/s20/facebook.png" title="Find me on Facebook" /></a>&nbsp;
+
+<a href="https://twitter.com/eko_purnomo97"><img alt="Twitter" border="0" src="http://1.bp.blogspot.com/-Chro7q6uj2E/Uvbt-ZIuvuI/AAAAAAAAAQQ/lKgie6d-MNo/s20/twitter.png" title="Follow my Twitter" /></a>&nbsp;
+
+<a href="https://plus.google.com/107139718002661368287"><img alt="Google+" border="0" src="http://2.bp.blogspot.com/-RlLTbIC_AtM/Uvbt80L9J5I/AAAAAAAAAPw/aQ2WngzkP6o/s20/google_plus.png" title="Add me on Google+" /></a>
+
+<a href="https://instagram.com/eko_purnomo97"><img alt="Instagram" border="0" src="http://2.bp.blogspot.com/-sGItvKHpEBI/Uvbt9uc-twI/AAAAAAAAAP8/mSrkggy9aY8/s20/instagram.png" title="Find me on Instagram" /></a>
+
+<a href="https://linkedin.com"><img alt="Linkedin" border="0" src="http://1.bp.blogspot.com/-g4kCUG-XenU/Uvbt95QYaxI/AAAAAAAAAQY/KJk7t5pCRYs/s20/linkedin.png" title="Find me on Linkedin" /></a>
+
+<a href="https://Path.com"><img alt="Path" border="0" src="http://2.bp.blogspot.com/-VnZEtVjKWmY/Uvbt92tTvVI/AAAAAAAAAQM/PV7WdbtJ5WY/s20/path.png" title="Find me on Path" /></a>
+
+<a href="mailto:eko_purnomo97@yahoo.com"><img alt="Yahoo" border="0" src="http://2.bp.blogspot.com/-z83sbVxyM8c/Uvbt_CLk6pI/AAAAAAAAAQk/IL6ynoNf6vg/s20/yahoo.png" title="Kirim Yahoo Mail" /></a>
+
+<a href='https://www.youtube.com/channel/UCQ_coRdwuLS6F2Fvfy25ODg' class='tooltip' title='youtube'><img src="http://3.bp.blogspot.com/-SiOe2eSiKL8/Uvbt_VECibI/AAAAAAAAAQo/OifeH3RcxoY/s20/youtube.png"/></a>
+			</h3>
+			<h1>Galeri Brad/ Shop</h1>
+			<canvas class="pixelate" height="500" width="500" style="border:1px solid yellow"><h1 style="color:red">HTML5 Needed</h1></canvas>
+			<h1>A place for notes / Miesto na poznamky</h1>
+			<textarea class="console fillW" id="note" style="height:500px;border:2px yellow solid"></textarea>
+			
+		</section>
+	</body>
+</html>
+
+
